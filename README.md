@@ -1,0 +1,1 @@
+# This is the backend repository for documind our app which lets you chat with government tenders 
