@@ -4,9 +4,10 @@
 # imported by Alembic
 
 from .database import Base
-from api.v1.posts.models import Post
-from api.v1.user.models import User
-from api.v1.vote.models import Voter
+from api.v1.users.model import User
+from api.v1.category.model import Category
+from api.v1.project.model import Project
+from api.v1.chat.model import UserResponse , AiResponse , Chat
 
 
 
