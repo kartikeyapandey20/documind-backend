@@ -43,18 +43,18 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }} 
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID}} 
+          aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
           aws-region: eu-north-1
 
       - name: Install dependencies
         run: pip install -r requirements.txt
 
       - name: Deploy to EC2
-        run: scp -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -r app/src ec2-user@${{ secrets.EC2_PUBLIC_IP }}:/home/ubuntu
+        run: scp -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -r app/src ec2-user@${{secrets.EC2_PUBLIC_IP}}:/home/ubuntu
 
       - name: Restart uvicorn
-        run: ssh -i ~/.ssh/id_rsa ec2-user@<EC2_PUBLIC_IP> "cd /home/ubuntu/app/src && pkill -f uvicorn; uvicorn main:app --host 0.0.0.0 --port 80"
+        run: ssh -i ~/.ssh/id_rsa ec2-user@${{secrets.EC2_PUBLIC_IP}} "cd /home/ubuntu/app/src && pkill -f uvicorn; uvicorn main:app --host 0.0.0.0 --port 80"
 
       - name: Start systemd service 
         run: ssh ec2-user@ec2-instance-public-ip "sudo systemctl start documind"
