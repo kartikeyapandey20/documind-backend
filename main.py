@@ -29,7 +29,7 @@ def root():
     Returns:
         dict: A dictionary indicating the status of the service.
     """
-    return {"status": "hello world"}  # Return a JSON response indicating status
+    return {"status": "hello world "}  # Return a JSON response indicating status
 
 if __name__ == "__main__":
     import uvicorn 
