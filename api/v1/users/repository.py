@@ -18,14 +18,6 @@ class UserRepository:
         Returns:
             User: The newly created user.
         """
-        print(user.password)
-        print(user.password)
-        print(user.password)
-        print(user.password)
-        print(user.password)
-        print(user.password)
-        print(user.password)
-        # Hash the password
         hashed_password = hash_password(user.password)
         user.password = hashed_password
         

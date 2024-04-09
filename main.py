@@ -30,3 +30,7 @@ def root():
         dict: A dictionary indicating the status of the service.
     """
     return {"status": "ok"}  # Return a JSON response indicating status
+
+if __name__ == "__main__":
+    import uvicorn 
+    uvicorn.run(app, host="0.0.0.0", port=8000)

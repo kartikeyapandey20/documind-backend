@@ -10,4 +10,4 @@ class Project(Base):
     document_urls = Column(ARRAY(String), nullable=False)
     created_at = Column(TIMESTAMP(timezone=True),
                         nullable=False, server_default=text('now()'))
-    category_id = Column(Integer , ForeignKey("users.id", ondelete="CASCADE"),nullable=False)
+    category_id = Column(Integer , ForeignKey("category.id", ondelete="CASCADE"),nullable=False)

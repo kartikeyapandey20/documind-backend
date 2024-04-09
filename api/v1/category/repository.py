@@ -2,12 +2,20 @@ from fastapi import Depends, HTTPException, status
 from api.v1.category.model import Category
 from .schema import CategorySchema
 from core.deps import get_db
+from sqlalchemy.orm import Session
 
 class CategoryRepository:
     
-    def create(self, category: CategorySchema):
-        category_db = self.db.query(Category).filter(Category.name == category.name).first()
-        if category_db:
-            raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Category already exists")
-        category_db = Category(name=category.name, user_id=user.get('id'))
-        self.db.add(category_db)
+    def create(self,category: CategorySchema , db : Session = Depends(get_db)):
+        
+        new_category = Category(**category.dict())
+        db.add(new_category)
+        db.commit()
+        db.refresh(new_category)
+        
+        return new_category
+    
+    def get_categories(self,db : Session = Depends(get_db)):
+        category =  db.query(Category).all()
+
+        return category
