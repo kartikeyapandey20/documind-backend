@@ -12,6 +12,8 @@ class UserSchema(BaseModel):
 class UserOut(BaseModel):
     id : int
     email : EmailStr
+    name : str
+    contact_no : str
     created_at : datetime
     class Config:
         orm_mode = True
