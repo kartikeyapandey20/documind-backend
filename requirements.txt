@@ -86,10 +86,11 @@ packaging==23.2
 pandas==2.2.1
 passlib==1.7.4
 peppercorn==0.6
+pillow==10.3.0
 posthog==3.5.0
 proto-plus==1.23.0
 protobuf==4.25.3
-# psycopg2==2.9.9
+psycopg2==2.9.9
 pulsar-client==3.4.0
 pyasn1==0.6.0
 pyasn1_modules==0.4.0
@@ -98,10 +99,13 @@ pydantic-extra-types==2.6.0
 pydantic-settings==2.2.1
 pydantic_core==2.16.3
 Pygments==2.17.2
+PyMuPDF==1.24.1
+PyMuPDFb==1.24.1
 pypdf==4.2.0
 PyPika==0.48.9
 pyproject_hooks==1.0.0
 pyreadline3==3.4.1
+pytesseract==0.3.10
 python-dateutil==2.9.0.post0
 python-dotenv==1.0.1
 python-helper-utils==0.1.1
