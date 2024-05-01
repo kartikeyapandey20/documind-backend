@@ -7,7 +7,7 @@ class Project(Base):
 
     id = Column(Integer, primary_key=True, nullable=False)
     project_name = Column(String, nullable=False)
-    document_urls = Column(ARRAY(String), nullable=False)
+    document_url = Column(String, nullable=False)
     created_at = Column(TIMESTAMP(timezone=True),
                         nullable=False, server_default=text('now()'))
     category_id = Column(Integer , ForeignKey("category.id", ondelete="CASCADE"),nullable=False)
