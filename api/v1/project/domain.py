@@ -10,3 +10,6 @@ class ProjectDomain:
     
     def get_projects(self, category_id,db):
         return self.__repository.get_project(category_id, db)
+    
+    def extract_text_from_file(self,file_name):
+        return self.__repository.extract_text_from_file(file_name)

@@ -19,3 +19,9 @@ class ProjectOut(BaseModel):
     
 class CategoryIn(BaseModel):
     category_id : int
+    
+class FileExtract(BaseModel):
+    file_name : str
+    
+class ExtractedText(BaseModel):
+    extracted_text : str
