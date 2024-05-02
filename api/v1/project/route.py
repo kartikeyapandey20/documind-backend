@@ -17,7 +17,7 @@ class ProjectRouter():
         async def create_project(project_name : str, category_id : int , files: UploadFile = File(...),db :Session =  Depends(get_db)):
             return await self.__domain.create_project(project_name , category_id ,files,db)
         
-        @api_router.get("/", response_model=List[ProjectOut])
+        @api_router.post("/", response_model=List[ProjectOut])
         def get_projects(category_id : CategoryIn , db : Session = Depends(get_db)):
             return self.__domain.get_projects(category_id, db)
 
